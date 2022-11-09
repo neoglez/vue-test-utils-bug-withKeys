@@ -6,7 +6,7 @@ export const vueComponent = defineComponent({
   render() {
     return h('div', { id: 'app' }, [
       h('img', { alt: 'Vue logo', src: 'https://vuejs.org/images/logo.png' }),
-      h(HelloWorld, { msg: 'Welcome to Your Vue.js App' }),
+      h(HelloWorld),
     ]);
   },
 });
