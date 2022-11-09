@@ -23,7 +23,7 @@ test('Display input info if the user press escape', async () => {
   expect(inputInfoWrapper.element.innerHTML).toBe("You did not press the Esc key");
 
   // now press the esc,
-  wrapper.get(spanWithKeys).trigger("keydown.esc");
+  await wrapper.get(spanWithKeys).trigger("keyup.esc");
 
   // the p must now display the right text.
   expect(inputInfoWrapper.element.innerHTML).toBe("You just press the Esc key");

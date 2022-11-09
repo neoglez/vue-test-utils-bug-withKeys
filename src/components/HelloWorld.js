@@ -28,7 +28,7 @@ export const vueComponent = defineComponent({
      * @param {KeyboardEvent} event 
      */
     setInputInfo(event) {
-      if (event.key === 'Escape') {
+      if (event.key === 'esc') {
         this.inputInfoFlag = true;
       } else {
         this.inputInfoFlag = false;
@@ -39,7 +39,7 @@ export const vueComponent = defineComponent({
 
     return [
       h('div', {}, "Click the input. Then press esc. Under the input will appear a note confirming that you press escape."),
-      h('span', { class: "span-with-keys", onKeyup: withKeys(/** @param { KeyboardEvent } event */(event) => { this.setInputInfo(event); }, ['escape']) }, h("input", {
+      h('span', { class: "span-with-keys", onKeyup: withKeys(/** @param { KeyboardEvent } event */(event) => { this.setInputInfo(event); }, ['esc']) }, h("input", {
         value: this.currentInputValue,
         onInput: (/** @type { KeyboardEvent & { currentTarget: { value: string } } } */ event) => { this.currentInputValue = event.currentTarget?.value; this.setInputInfo((event)) }
       }
