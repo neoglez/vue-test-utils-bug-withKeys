@@ -11,3 +11,6 @@ Some recommendations has been done by VTU members to make the test pass, e.g., s
 The expected behavior is to have both functionality (part one: `npm run serve:universal`) and test passing (part two: `npm run test`) successfully executed.
 
 Special attention has to be taken when changing line 40 in HelloWorld.js since replacing `escape` by `Escape` breaks the functionality. The same situation in line 31 in HelloWorld.js: replacing `Escape` by `escape` breaks the component (an issue with Vue Js?).
+
+**Solution** thanks to [@cexbrayat](https://github.com/cexbrayat):
+`await wrapper.get(spanWithKeys).trigger('keyup.Escape');`

@@ -23,10 +23,10 @@ test('Display input info if the user press escape', async () => {
   expect(inputInfoWrapper.element.innerHTML).toBe("You did not press the Esc key");
 
   // now press the esc,
-  await wrapper.get(spanWithKeys).trigger("keyup.esc");
 
-  // These one don't work neither:
+  // These don't work:
 
+  // await wrapper.get(spanWithKeys).trigger("keyup.esc");
   // await wrapper.get(spanWithKeys).trigger("keydown.esc");
   // await wrapper.get(spanWithKeys).trigger("keydown", { key: "Escape" });
   // await wrapper.get(spanWithKeys).trigger("keydown", { key: "escape" });
@@ -42,6 +42,7 @@ test('Display input info if the user press escape', async () => {
   // await wrapper.get(spanWithKeys).trigger("keyup", { code: "27" });
   // await wrapper.get(spanWithKeys).trigger("keyup", { code: "esc" });
   // await wrapper.get(spanWithKeys).trigger("keyup", { code: "escape" });
+
   await wrapper.get(spanWithKeys).trigger('keyup.Escape');
 
   // the p must now display the right text.
