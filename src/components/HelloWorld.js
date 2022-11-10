@@ -44,7 +44,7 @@ export const vueComponent = defineComponent({
         onInput: (/** @type { KeyboardEvent & { currentTarget: { value: string } } } */ event) => { this.currentInputValue = event.currentTarget?.value; this.setInputInfo((event)) }
       }
       )),
-      h('p', { class: "test-input-info" }, this.inputInfoFlag ? "You just press the Esc key" : "You did not press the Esc key"),
+      h('p', { class: "test-input-info" }, this.inputInfoFlag ? "You just pressed the Esc key" : "You did not press the Esc key"),
     ];
   }
 });
