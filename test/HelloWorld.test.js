@@ -25,6 +25,25 @@ test('Display input info if the user press escape', async () => {
   // now press the esc,
   await wrapper.get(spanWithKeys).trigger("keyup.esc");
 
+  // These one don't work neither:
+
+  // await wrapper.get(spanWithKeys).trigger("keydown.esc");
+  // await wrapper.get(spanWithKeys).trigger("keydown", { key: "Escape" });
+  // await wrapper.get(spanWithKeys).trigger("keydown", { key: "escape" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { key: "esc" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { key: "escape" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { key: "Escape" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { key: "esc" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { key: "escape" });
+
+  // await wrapper.get(spanWithKeys).trigger("keydown", { code: "27" });
+  // await wrapper.get(spanWithKeys).trigger("keydown", { code: "27" });
+  // await wrapper.get(spanWithKeys).trigger("keydown", { code: "27" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { code: "27" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { code: "esc" });
+  // await wrapper.get(spanWithKeys).trigger("keyup", { code: "escape" });
+  await wrapper.get(spanWithKeys).trigger('keyup.Escape');
+
   // the p must now display the right text.
   expect(inputInfoWrapper.element.innerHTML).toBe("You just pressed the Esc key");
 
